@@ -207,7 +207,7 @@ const Wrapper = styled.section`
     max-width: 200px;
   }
   .clear-btn {
-    background: var(--clr-red-dark);
+    background: #f70808;
     color: var(--clr-white);
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
