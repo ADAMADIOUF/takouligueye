@@ -22,7 +22,7 @@ const Wrapper = styled.section`
   min-height: 20vh;
   display: flex;
   align-items: center;
-
+margin-top:5rem;
   color: var(--clr-primary-1);
   a {
     color: var(--clr-primary-3);

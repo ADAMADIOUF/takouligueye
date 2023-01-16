@@ -11,32 +11,31 @@ const CartItem = ({id,image,name,color,price,amount}) => {
     toggleAmount(id,"inc")
   }
   const decrease = () =>{toggleAmount(id, 'dec')}
-  return <Wrapper>
-    <div className="title">
-<img src={image} alt={name} />
-<div>
-  <h5>
-    {name}
-  </h5>
-  <p className="color">
-    color: <span style={{background:color}}></span>
-  </p>
-  <h5 className="price-small">
-    {formatPrice(price)}
-  </h5>
-</div>
-    </div>
-    <h5 className="price">
-      {formatPrice(price)}
-    </h5>
-    <AmountButtons amount={amount} increase={increase}decrease={decrease}/>
-    <h5 className='subtotal'>
-{formatPrice(price * amount)}
-    </h5>
-    <button type='button' className='remove-btn' onClick={() =>removeItem(id)}>
-      <FaTrash/>
-    </button>
-  </Wrapper>
+  return (
+    <Wrapper>
+      <div className='title'>
+        <img src={image} alt={name} />
+        <div>
+          <h5>{name}</h5>
+
+          <h5 className='price-small'>{formatPrice(price)}</h5>
+        </div>
+      </div>
+
+      <h5 className='price'>{formatPrice(price)}</h5>
+
+      <AmountButtons amount={amount} increase={increase} decrease={decrease} />
+      <h5 className='subtotal'>{formatPrice(price * amount)}</h5>
+
+      <button
+        type='button'
+        className='remove-btn'
+        onClick={() => removeItem(id)}
+      >
+        <FaTrash />
+      </button>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.article`
@@ -46,8 +45,9 @@ const Wrapper = styled.article`
   .price {
     display: none;
   }
+
   display: grid;
-  grid-template-columns: 200px auto auto;
+  grid-template-columns: 120px auto auto;
   grid-template-rows: 75px;
   gap: 3rem 1rem;
   justify-items: center;
@@ -59,7 +59,7 @@ const Wrapper = styled.article`
     grid-template-columns: 75px 125px;
     align-items: center;
     text-align: left;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   img {
     width: 100%;
@@ -73,24 +73,6 @@ const Wrapper = styled.article`
     margin-bottom: 0;
   }
 
-  .color {
-    color: var(--clr-grey-5);
-    font-size: 0.75rem;
-    letter-spacing: var(--spacing);
-    text-transform: capitalize;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    span {
-      display: inline-block;
-      width: 0.5rem;
-      height: 0.5rem;
-      background: red;
-      margin-left: 0.5rem;
-      border-radius: var(--radius);
-    }
-  }
   .price-small {
     color: var(--clr-primary-5);
   }
@@ -116,6 +98,7 @@ const Wrapper = styled.article`
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: var(--radius);
     font-size: 0.75rem;
     cursor: pointer;

@@ -42,8 +42,15 @@ const Hero = () => {
             <div key={id}>
               <address className={slider}>
                 <img src={image} alt='' className='img-slide' />
-
-                
+                <div className='slide-info'>
+                  <div className='title'>
+                    <p>{title}</p>
+                  </div>
+                  <div className='slide-desc'>
+                    <h3>{name}</h3>
+                    
+                  </div>
+                </div>
               </address>
             </div>
           )
@@ -68,7 +75,7 @@ const Wrapper = styled.section`
     overflow: hidden;
     display: flex;
     text-align: center;
-    
+
     margin: 2rem auto;
   }
   .slide-info {
@@ -77,15 +84,14 @@ const Wrapper = styled.section`
     left: 20%;
   }
   .slide-info h3 {
-    color: var(--clr-white);
+    color: var(--clr-black: #222);
     letter-spacing: var(--spacing);
     font-size: 2rem;
   }
   .slide-info p {
-    font-size: 1.5rem;
-    color: var(--clr-primary-8);
-    text-transform: uppercase;
-    cursor: pointer;
+    font-size: 1rem;
+    color: var(--clr-black: #222);
+    
   }
 
   .next-slide {
@@ -115,7 +121,7 @@ const Wrapper = styled.section`
   }
   @media (min-width: 992px) {
     .img-slide {
-      width: 700px;
+      width: 100%;
       height: 100vh;
     }
     .slide {
@@ -128,14 +134,6 @@ const Wrapper = styled.section`
       gap: 20rem;
       top: 30%;
       left: 5%;
-    }
-    .slide-info h3 {
-      font-size: 4rem;
-      max-width: 30rem;
-    }
-    .slide-info p {
-      font-size: 3rem;
-      font-weight: bold;
     }
   }
 `

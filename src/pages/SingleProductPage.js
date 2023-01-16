@@ -42,7 +42,6 @@ const {
   stock,
   stars,
   reviews,
-  id: sku,
   company,
   images,
 } = product
@@ -65,14 +64,8 @@ const {
               <span>disponible:</span>
               {stock > 0 ? 'en stock' : 'Rupture de stock'}
             </p>
-            <p className='info'>
-              <span>UGS:</span>
-              {sku}
-            </p>
-            <p className='info'>
-              <span>Marque:</span>
-              {company}
-            </p>
+            
+           
             <hr />
             {stock > 0 && <AddToCart product={product} />}
           </section>

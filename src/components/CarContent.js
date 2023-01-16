@@ -37,6 +37,8 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
+    gap
+    2rem
   }
   .link-btn {
     background: transparent;
@@ -49,9 +51,10 @@ const Wrapper = styled.section`
     letter-spacing: var(--spacing);
     font-weight: 400;
     cursor: pointer;
+    font-size:1rem
   }
   .clear-btn {
-    background: var(--clr-black);
+    background:  --clr-primary-5:#404040;
   }
 `
 export default CartContent

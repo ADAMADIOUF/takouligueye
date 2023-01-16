@@ -46,13 +46,13 @@ const Wrapper = styled.section`
   article {
     border: 1px solid var(--clr-grey-8);
     border-radius: var(--radius);
-    padding: 1.5rem 3rem;
+    padding: 0.5rem;
   }
   h4,
   h5,
   p {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 100px 1fr;
   }
   p {
     text-transform: capitalize;
@@ -68,7 +68,9 @@ const Wrapper = styled.section`
     margin-top: 1rem;
     text-align: center;
     font-weight: 700;
-    color:#fff;
+    color: #fff;
+    gap: 1rem;
+    background: #4d7c0f;
   }
 `
 

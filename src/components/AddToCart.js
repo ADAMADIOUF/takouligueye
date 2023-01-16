@@ -8,8 +8,8 @@ import AmountButtons from './AmountButtons'
 const AddToCart = ({product}) => {
   const{addToCart}= useCartContext()
 
-  const{id,stock,colors} = product
-  const[mainColor,setMainColor]= useState(colors[0])
+  const{id,stock} = product
+  
   const[amount,setAmount] = useState(1)
   const increase =() =>{
 setAmount((oldAmount) =>{
@@ -32,25 +32,7 @@ setAmount((oldAmount) =>{
 
   return (
     <Wrapper>
-      <div className='colors'>
-        <span>colors:</span>
-        <div>
-          {colors.map((color, index) => {
-            return (
-              <button
-                key={index}
-                style={{ background: color }}
-                className={`${
-                  mainColor === color ? 'color-btn active' : 'color-btn'
-                }`}
-                onClick={() => setMainColor(color)}
-              >
-                {mainColor === color ? <FaCheck /> : null}
-              </button>
-            )
-          })}
-        </div>
-      </div>
+      
       <div className='btn-container'>
         <AmountButtons
           increase={increase}
@@ -59,10 +41,10 @@ setAmount((oldAmount) =>{
         />
         <Link
           to={`/cart`}
-          className='btn'
-          onClick={() => addToCart(id, mainColor, amount, product)}
+          className='btn-add'
+          onClick={() => addToCart(id, amount, product)}
         >
-          <h6 className='btn-add'>Ajouter au panier</h6>
+          <button className='add'>Ajouter au panier</button>
         </Link>
       </div>
     </Wrapper>
@@ -109,11 +91,20 @@ const Wrapper = styled.section`
     margin-top: 2rem;
   }
 
-  .btn {
+  .add {
     margin-top: 1rem;
-    width: 140px;
-    color:#fff;
-    font-size:1rem;
+    color: white;
+    font-size: 1rem;
+    background: #4d7c0f;
+    padding: 0.375rem 0.75rem;
+    letter-spacing: var(--spacing);
+    display: inline-block;
+    font-weight: 400;
+    transition: var(--transition);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius);
+    border-color: transparent;
   }
 `
 export default AddToCart
